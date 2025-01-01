@@ -4,17 +4,20 @@ import Spinner from "./Spinner.js";
 import PropTypes from "prop-types";
 
 import InfiniteScroll from "react-infinite-scroll-component";
+// document.title= this.props.category
+
 
 export class News extends Component {
   static defaultProps = {
     country: "in",
-    pagesize: 25,
+    pagesize: 12,
     category: "general",
   };
   static propTypes = {
     country: PropTypes.string,
     pagesize: PropTypes.bool,
     category: PropTypes.string,
+    apiKey: PropTypes.string
   };
   constructor() {
     super();
@@ -32,7 +35,7 @@ export class News extends Component {
       this.props.category
     }&country=${
       this.props.country
-    }&apiKey=1a5a0b5aa3e34d52bb76b172f89280d0&page=${
+    }&apiKey=${this.props.apiKey}&page=${
       this.state.page + 1
     }&pageSize=${this.props.pagesize}`;
     let data = await fetch(url);
@@ -49,7 +52,7 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h1 className="text-center">NewsMokey - Top Headlines</h1>
+        <h1 className="text-center">Top {this.props.category} Headlines</h1>
         <InfiniteScroll
           dataLength={this.state.articles.length}
           next={this.handleNextClick}

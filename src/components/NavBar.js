@@ -7,8 +7,8 @@ export default class NavBar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
-              NewsMonkey
+            <Link className="navbar-brand" to="/business">
+              NEWS
             </Link>
             <button
               className="navbar-toggler"
@@ -23,15 +23,6 @@ export default class NavBar extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item mx-2">
-                  <Link className="nav-Link text-light active"  to="/">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item mx-2"><Link className="nav-Link text-light" to="/about">
-                    About
-                  </Link>
-                </li>
                 <li className="nav-item mx-2"><Link className="nav-Link text-light" to="/business">Business</Link></li>
                 <li className="nav-item mx-2"><Link className="nav-Link text-light" to="/entertainment">Entertainment</Link></li>
                 <li className="nav-item mx-2"><Link className="nav-Link text-light" to="/general">General</Link></li>

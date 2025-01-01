@@ -9,6 +9,7 @@ import News from "./components/News";
 const MyContext = createContext(null);
 
 export default class App extends Component {
+  apiKey = process.env.REACT_APP_NEWS_API;
   render() {
     return (
       <div>
@@ -18,42 +19,92 @@ export default class App extends Component {
             <Routes>
               <Route
                 path="/business"
-                element={<News key="business" pagesize={5} country="us" category="business" />}
+                element={
+                  <News
+                    key="business"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="business"
+                  />
+                }
               />
               <Route
                 path="/entertainment"
                 element={
-                  <News  key="entertainment" pagesize={5} country="us" category="entertainment" />
+                  <News
+                    key="entertainment"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="entertainment"
+                  />
                 }
               />
               <Route
                 path="/general"
-                element={<News key="general" pagesize={5} country="us" category="general" />}
+                element={
+                  <News
+                    key="general"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="general"
+                  />
+                }
               />
               <Route
                 path="/health"
-                element={<News key="health" pagesize={5} country="us" category="health" />}
+                element={
+                  <News
+                    key="health"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="health"
+                  />
+                }
               />
               <Route
                 path="/science"
-                element={<News key="science" pagesize={5} country="us" category="science" />}
+                element={
+                  <News
+                    key="science"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="science"
+                  />
+                }
               />
               <Route
                 path="/sports"
-                element={<News key="sports" pagesize={5} country="us" category="sports" />}
+                element={
+                  <News
+                    key="sports"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="sports"
+                  />
+                }
               />
               <Route
                 path="/technology"
                 element={
-                  <News key="technology" pagesize={5} country="us" category="technology" />
+                  <News
+                    key="technology"
+                    apiKey={this.apiKey}
+                    pagesize={5}
+                    country="us"
+                    category="technology"
+                  />
                 }
               />
             </Routes>
           </MyContext.Provider>
         </Router>
       </div>
-      
-
     );
   }
 }
